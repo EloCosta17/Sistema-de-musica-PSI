@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Música{% endblock %}</title>
+</head>
+<body>
+    <header>
+       <nav><a href="/">Início</a></nav>
+       <nav><a href="/albuns">Albuns</a></nav>
+        <nav><a href="/faixas">Faixas</a></nav>
+       <nav><a href="/artistas">Artistas</a></nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
