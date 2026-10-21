@@ -4,6 +4,24 @@
 {% block title %}Início - Sistema de Música{% endblock %}
 
 {% block content %}
-    <h2>Bem-vindo ao Sistema de Música!</h2>
+    <h2>Bem-vindo ao Sistema de Música</h2>
     <p>Gerencie seus álbuns, faixas e artistas em um só lugar</p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Artistas</h3>
+            <p>Cadastre e visualize os artistas</p>
+            <a href="{{ url_for('artistas') }}" class="btn">Gerenciar Artistas</a>
+        </div>
+        <div class="card">
+            <h3>Álbuns</h3>
+            <p>Gerencie os álbuns e vincule aos seus respectivos artistas</p>
+            <a href="{{ url_for('albuns') }}" class="btn">Gerenciar Álbuns</a>
+        </div>
+        <div class="card">
+            <h3>Faixas</h3>
+            <p>Adicione faixas de áudio e vincule aos álbuns cadastrados</p>
+            <a href="{{ url_for('faixas') }}" class="btn">Gerenciar Faixas</a>
+        </div>
+    </div>
 {% endblock %}
