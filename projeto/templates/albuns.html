@@ -28,5 +28,17 @@
             <button type="submit" class="btn">Salvar Álbum</button>
         </form>
    </section>
+   <section class="list-section">
+        <h3>Álbuns Cadastrados</h3>
+
+        {% for album in albuns %}
+            <div class="card">
+                <h4>{{ album.titulo }}</h4>
+                <p>Ano: {{ album.ano }}</p>
+            </div>
+        {% else %}
+            <p>Nenhum álbum foi cadastrado</p>
+        {% endfor %}
+    </section>
 
 {% endblock %}

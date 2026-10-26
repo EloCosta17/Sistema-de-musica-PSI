@@ -30,6 +30,19 @@
 
             <button type="submit" class="btn">Salvar Faixa</button>
         </form>
-</section>
+    </section>
+    <section class="list-section">
+        <h3>Faixas Cadastradas</h3>
+
+        {% for faixa in faixas %}
+            <div class="card">
+                <h4>{{ faixa.titulo }}</h4>
+                <p>Duração: {{ faixa.duracao_segundos }} segundos</p>
+                <p>Álbum: {{ faixa.album.titulo }}</p>
+            </div>
+        {% else %}
+            <p>Nenhuma faixa foi cadastrada</p>
+        {% endfor %}
+    </section>
 
 {% endblock %}

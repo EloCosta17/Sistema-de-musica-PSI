@@ -16,4 +16,15 @@
             <button type="submit" class="btn">Salvar Artista</button>
         </form>
     </section>
+    <section class="list-section">
+        <h3>Artistas Cadastrados</h3>
+
+        {% for artista in artistas %}
+            <div class="card">
+                <p>{{ artista.nome }}</p>
+            </div>
+        {% else %}
+            <p>Nenhum artista foi cadastrado</p>
+        {% endfor %}
+    </section>
 {% endblock %}
