@@ -11,6 +11,14 @@ artista_album_tabela = Table(
     Column("album_id", ForeignKey("albuns.id"), primary_key=True),
 )
 
+class Usuario(Base):
+    __tablename__ = "usuarios"
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    nome: Mapped[str] = mapped_column(String(100), unique=True)
+    email: Mapped[str] = mapped_column(String(100), unique=True)
+    senha: Mapped[str] = mapped_column(String(100))
+
 class Album(Base):
 
     __tablename__ = "albuns"
