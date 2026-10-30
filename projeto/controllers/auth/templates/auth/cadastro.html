@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}  usuarios - Spotypobre{% endblock %}
+
+{% block content %}
+    <section class="form-section">
+        <h3>Cadastrar usuário</h3>
+        <form action="{{ url_for('auth.login') }}" method="POST">
+                <label for="nome">Nome do  usuário:</label>
+                <input type="text" name="nome" placeholder="Ex: Digite seu nome">
+                <label for="email">Email do  usuário:</label>
+                <input type="email" name="email" placeholder="Insira seu email">
+                <label for="senha">Senha do usuário:</label>
+                <input type="password" name="senha" placeholder="Insira sua senha">
+            <button type="submit" class="btn">Cadastrar</button>
+        </form>
+    </section>
+{% endblock %}

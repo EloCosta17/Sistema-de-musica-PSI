@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Albuns - Sistema de Música{% endblock %}
+{% block title %}Albuns - Spotypobre {% endblock %}
 
 {% block content %}
     <h2>Página de Albuns</h2>
     <section class="form-section">
         <h3>Cadastrar Novo Álbum</h3>
-        <form action="{{ url_for('cadastro_album') }}" method="POST">
+        <form action="{{ url_for('albuns.cadastro_album') }}" method="POST">
             <div class="">
                 <label for="titulo">Título do Álbum:</label>
                 <input type="text" id="titulo" name="titulo" placeholder="Ex: Veneno Antimonotonia">
@@ -28,7 +28,7 @@
             <button type="submit" class="btn">Salvar Álbum</button>
         </form>
    </section>
-   <section class="list-section">
+   <section>
         <h3>Álbuns Cadastrados</h3>
 
         {% for album in albuns %}

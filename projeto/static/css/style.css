@@ -128,6 +128,8 @@ form div {
 
 input[type="text"],
 input[type="number"],
+input[type="email"],
+input[type="password"],
 select {
   background-color: var(--cor-card-gray);
   border: 1px solid var(--cor-border);
