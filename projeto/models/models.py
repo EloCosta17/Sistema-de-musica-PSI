@@ -26,6 +26,7 @@ class Album(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     titulo: Mapped[str] = mapped_column(String(25), unique=True)
     ano: Mapped[int]
+    usuario_id: Mapped[int] = mapped_column(ForeignKey("usuarios.id"))
 
     faixas: Mapped[List["Faixa"]] = relationship(back_populates="albuns")
     artistas: Mapped[List["Artista"]] = relationship(secondary=artista_album_tabela, back_populates="albuns")
@@ -36,6 +37,7 @@ class Artista(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     nome: Mapped[str] = mapped_column(String(64), unique=True)
+    usuario_id: Mapped[int] = mapped_column(ForeignKey("usuarios.id"))
 
     albuns: Mapped[List["Album"]] = relationship(secondary=artista_album_tabela, back_populates="artistas")
 
@@ -47,5 +49,6 @@ class Faixa(Base):
     titulo: Mapped[str] = mapped_column(String(25), unique=True)
     duracao: Mapped[int]
     album_id: Mapped[int] = mapped_column(ForeignKey("albuns.id"))
+    usuario_id: Mapped[int] = mapped_column(ForeignKey("usuarios.id"))
 
     albuns: Mapped[List["Album"]] = relationship(back_populates="faixas")
