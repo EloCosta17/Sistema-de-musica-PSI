@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}  usuarios - Spotypobre{% endblock %}
+
+{% block content %}
+    <section style="margin-bottom: 15px;">
+        <h2>Página de login</h2>
+        <h4>Ainda não possui uma conta?</h4>
+        <p>Realize seu cadastrado no Spotypobre </p>
+        <a href="{{ url_for('auth.cadastrar') }}" >Cadastrar usuário</a>
+    </section>
+
+    <section class="form-section">
+        <h3>Login</h3>
+        <form action="{{ url_for('auth.login') }}" method="POST">
+                <label for="nome">Nome do  usuário:</label>
+                <input type="text" name="nome" placeholder="Ex: Digite seu nome">
+                <label for="senha">Senha do usuário:</label>
+                <input type="password" name="senha" placeholder="Insira sua senha">
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </section>
+{% endblock %}

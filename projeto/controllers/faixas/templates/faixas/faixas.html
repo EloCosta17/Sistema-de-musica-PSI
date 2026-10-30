@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Faixas - Sistema de Música{% endblock %}
+{% block title %}Faixas - Spotypobre{% endblock %}
 
 {% block content %}
     <h2>Página de Faixas</h2>
 
     <section class="form-section">
-        <h3>Cadastrar Nova Faixa</h3>
-        <form action="{{ url_for('cadastro_faixa') }}" method="POST">
+        <h3>Cadastrar Faixa</h3>
+        <form action="{{ url_for('faixas.cadastro_faixa') }}" method="POST">
             <div class="">
                 <label for="titulo">Título da Faixa:</label>
                 <input type="text" id="titulo" name="titulo" placeholder="Ex: Por Enquanto">
@@ -31,7 +31,7 @@
             <button type="submit" class="btn">Salvar Faixa</button>
         </form>
     </section>
-    <section class="list-section">
+    <section>
         <h3>Faixas Cadastradas</h3>
 
         {% for faixa in faixas %}

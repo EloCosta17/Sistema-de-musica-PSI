@@ -1,22 +1,20 @@
 
 {% extends "base.html" %}
 
-{% block title %} Artistas - Sistema de Música {% endblock %}
+{% block title %} Artistas - Spotypobre{% endblock %}
 
 {% block content %}
     <h2>Página de Artistas</h2>
 
     <section class="form-section">
-        <h3>Cadastrar Novo Artista</h3>
-        <form action="{{ url_for('cadastro_artista') }}" method="POST">
-            <div class="">
+        <h3>Cadastrar Artista</h3>
+        <form action="{{ url_for('artistas.cadastro_artista') }}" method="POST">
                 <label for="nome">Nome do Artista:</label>
                 <input type="text" id="nome" name="nome" placeholder="Ex: Cássia Eller">
-            </div>
             <button type="submit" class="btn">Salvar Artista</button>
         </form>
     </section>
-    <section class="list-section">
+    <section>
         <h3>Artistas Cadastrados</h3>
 
         {% for artista in artistas %}

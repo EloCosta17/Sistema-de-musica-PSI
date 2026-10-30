@@ -1,12 +1,12 @@
 from flask import request, render_template
 from controllers.artistas import artistas_bp
-from models import Albuns, Artistas, Faixas
+from models.models import Album, Artista
 
-@app.route("/artistas")
+@artistas_bp.route("/artistas")
 def artistas():
-    return render_template("artistas.html")
+    return render_template("artistas/artistas.html")
 
-@app.route("/artistas/novo", methods=["POST"])
+@artistas_bp.route("/artistas/novo", methods=["POST"])
 def cadastro_artista():
     nome = request.form.get("nome")
-    return render_template("artistas.html", nome=nome)
+    return render_template("artistas/artistas.html", nome=nome)
